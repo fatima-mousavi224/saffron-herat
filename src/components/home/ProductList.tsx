@@ -5,9 +5,9 @@ import { PRODUCT_CATEGORIES } from "@/constants/navigation";
 
 const Categories = () => {
   return (
-    <section className="py-31.25 container max-w-7xl mx-auto lg:px-10 md:px-8 sm:px-6 px-4">
+    <section className="md:py-31.25 py-20 container" id="categories">
       
-      <div className="flex items-center justify-center md:gap-4 gap-2 mb-12">
+      <div className="flex items-center justify-center md:gap-4 gap-2 md:mb-12 mb-6">
         <div className="h-[2.7px] flex-1 bg-linear-to-l from-primary-red via-primary-white to-primary-white"></div>
         <h2 className="text-base md:text-[24px] text-text-2 font-normal whitespace-nowrap pb-1.5">
           <span className="text-text-1 font-bold ml-1 text-base md:text-[24px]">
@@ -19,7 +19,7 @@ const Categories = () => {
       </div>
 
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-8">
   {PRODUCT_CATEGORIES.map((item) => (
     <Link
       key={item.id}
@@ -41,7 +41,14 @@ const Categories = () => {
             alt={item.title}
             width={220}
             height={200}
-            className="object-contain scale-120"
+            className="object-contain scale-120 hidden md:block"
+          />
+          <Image
+            src={item.image}
+            alt={item.title}
+            width={140}
+            height={20}
+            className="object-contain scale-120 block md:hidden"
           />
         </div>
       </div>
